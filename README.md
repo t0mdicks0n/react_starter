@@ -1,17 +1,16 @@
 ## About
-Team Teers contribution for AngelHack Global Hackathon Series: Silicon Valley on July 29, 2017.
+An awesome react starter pack. Perfect starting point for doing any kind of React/Node project. Has just enough things to get started (you don't want to much complexity when starting but still want to be able and quickly get productive).
 
-## Team Members
-* Charles Kim
-* Soojin Kim
-* Tom Dickson
-* Ryan Perry
-* Rajas Kale
-
-## Teer
+## Technology stack
+* React with webpack for both hot reloading during dev and a compile command for deployment
+* PostgreSQL with Knex and Bookshelf. Easily the most robust and best ORM combo for Node.
+* Grunt for automatic creation of database
+* Docker for easy infrastructure independent deployment.
 
 ## Database Initialization
 IMPORTANT: ensure postgres is running before performing these steps.
+
+If you don't have a user "postgres" with the password "postgres" you need to create one manually on your development machine. For deployment Docker creates this automagically.
 
 After running npm install run the following:
 

@@ -1,0 +1,31 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: teer
+    volumes: 
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - webnet
+  web:
+    build: .
+    links:
+      - db
+    ports:
+      - "80:1337"
+    networks:
+     - webnet
+    environment:
+      - DOCKER=isTrue
+    command: npm run migrateDB
+volumes:
+  db-data:
+networks:
+  webnet:
